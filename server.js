@@ -4,6 +4,13 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const cors = require('cors');  
 require('dotenv').config();
+const csurf = require('csurf');
+const rateLimit = require('express-rate-limit');
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+});
 
 const app = express();
 
@@ -77,6 +84,7 @@ app.post('/login', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
+app.use(csurf({ cookie: true }));
+app.use(limiter);
 // Export the app to be used as a serverless function
 module.exports = app;
