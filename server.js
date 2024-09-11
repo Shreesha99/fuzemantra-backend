@@ -9,7 +9,7 @@ const app = express();
 
 // CORS Options
 const corsOptions = {
-  origin: ['https://www.fuzemantra.com', 'http://localhost:3000'],
+  origin: ['https://www.fuzemantra.com', 'http://localhost:3000', 'http://127.0.0.1:5501'],
   methods: ['GET', 'POST'],
   optionsSuccessStatus: 200
 }
