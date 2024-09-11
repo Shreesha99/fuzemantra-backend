@@ -1,0 +1,31 @@
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore environment variables
+.env
+
+# Ignore package lock file
+package-lock.json
+
+# Ignore logs
+*.log
+
+# Ignore npm debug files
+npm-debug.log*
+
+# Ignore build output
+dist/
+build/
+
+# Ignore local environment files
+*.env.local
+*.env.*.local
+
+# Ignore IDE and OS-specific files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+.vercel
